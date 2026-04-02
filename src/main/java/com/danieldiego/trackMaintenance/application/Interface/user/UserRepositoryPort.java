@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.application.port.user;
+package com.danieldiego.trackMaintenance.application.Interface.user;
 
 import com.danieldiego.trackMaintenance.domain.model.User;
 

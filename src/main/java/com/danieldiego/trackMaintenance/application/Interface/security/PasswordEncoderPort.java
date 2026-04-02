@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.application.port.security;
+package com.danieldiego.trackMaintenance.application.Interface.security;
 
 public interface PasswordEncoderPort {
 

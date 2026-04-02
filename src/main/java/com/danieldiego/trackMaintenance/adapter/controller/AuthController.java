@@ -6,8 +6,7 @@ import com.danieldiego.trackMaintenance.adapter.dto.user.register.RegisterReques
 import com.danieldiego.trackMaintenance.application.dto.user.login.LoginUserCommand;
 import com.danieldiego.trackMaintenance.application.dto.user.register.RegisterUserCommand;
 import com.danieldiego.trackMaintenance.application.dto.user.register.RegisterUserOutput;
-import com.danieldiego.trackMaintenance.application.usecase.user.login.LoginUserUseCase;
-import com.danieldiego.trackMaintenance.application.usecase.user.register.RegisterUserUseCase;
+import com.danieldiego.trackMaintenance.application.service.user.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -26,12 +25,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Authentication", description = "Endpoints for user authentication")
 public class AuthController {
 
-    private final RegisterUserUseCase registerUserUseCase;
-    private final LoginUserUseCase loginUserUseCase;
+    private final UserService userService;
 
-    public AuthController(RegisterUserUseCase registerUserUseCase, LoginUserUseCase loginUserUseCase) {
-        this.registerUserUseCase = registerUserUseCase;
-        this.loginUserUseCase = loginUserUseCase;
+    public AuthController(UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/register")
@@ -52,7 +49,7 @@ public class AuthController {
                 request.password()
         );
 
-        RegisterUserOutput output = registerUserUseCase.execute(command);
+        RegisterUserOutput output = userService.register(command);
 
         return ApiResponse.success(201, "User registered successfully", output);
     }
@@ -69,7 +66,7 @@ public class AuthController {
     })
     public ApiResponse<RegisterUserOutput> login(@Valid @RequestBody LoginRequest request) {
         LoginUserCommand command = new LoginUserCommand(request.email(), request.password());
-        RegisterUserOutput output = loginUserUseCase.execute(command);
+        RegisterUserOutput output = userService.login(command);
         return ApiResponse.success(200, "Login successful", output);
     }
 }

@@ -13,7 +13,7 @@ public record RegisterRequest(
         @Size(min = 3, max = 150, message = "Name must be between 3 and 150 characters")
         String name,
 
-        @Schema(description = "User's email address", example = "john@example.com")
+        @Schema(description = "User's email address", example = "contato@danieldiegosantana.me")
         @NotBlank(message = "Email is required")
         @Email(message = "Invalid email format")
         String email,

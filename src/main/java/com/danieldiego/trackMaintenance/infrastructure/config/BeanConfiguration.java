@@ -1,12 +1,10 @@
 package com.danieldiego.trackMaintenance.infrastructure.config;
 
-import com.danieldiego.trackMaintenance.application.port.jwt.JwtTokenPort;
-import com.danieldiego.trackMaintenance.application.port.security.PasswordEncoderPort;
-import com.danieldiego.trackMaintenance.application.port.user.UserRepositoryPort;
-import com.danieldiego.trackMaintenance.application.usecase.user.login.LoginUserUseCase;
-import com.danieldiego.trackMaintenance.application.usecase.user.login.LoginUserUseCaseImpl;
-import com.danieldiego.trackMaintenance.application.usecase.user.register.RegisterUserUseCase;
-import com.danieldiego.trackMaintenance.application.usecase.user.register.RegisterUserUseCaseImpl;
+import com.danieldiego.trackMaintenance.application.Interface.jwt.JwtTokenPort;
+import com.danieldiego.trackMaintenance.application.Interface.security.PasswordEncoderPort;
+import com.danieldiego.trackMaintenance.application.Interface.user.UserRepositoryPort;
+import com.danieldiego.trackMaintenance.application.service.user.UserService;
+import com.danieldiego.trackMaintenance.application.service.user.UserServiceImpl;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,16 +14,9 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public RegisterUserUseCase registerUserUseCase(UserRepositoryPort userRepository,
-                                                    PasswordEncoderPort passwordEncoder,
-                                                    JwtTokenPort jwtTokenPort) {
-        return new RegisterUserUseCaseImpl(userRepository, passwordEncoder, jwtTokenPort);
-    }
-
-    @Bean
-    public LoginUserUseCase loginUserUseCase(UserRepositoryPort userRepository,
-                                              PasswordEncoderPort passwordEncoder,
-                                              JwtTokenPort jwtTokenPort) {
-        return new LoginUserUseCaseImpl(userRepository, passwordEncoder, jwtTokenPort);
+    public UserService userService(UserRepositoryPort userRepository,
+                                   PasswordEncoderPort passwordEncoder,
+                                   JwtTokenPort jwtTokenPort) {
+        return new UserServiceImpl(userRepository, passwordEncoder, jwtTokenPort);
     }
 }

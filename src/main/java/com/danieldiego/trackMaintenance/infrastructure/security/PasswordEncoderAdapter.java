@@ -1,6 +1,6 @@
 package com.danieldiego.trackMaintenance.infrastructure.security;
 
-import com.danieldiego.trackMaintenance.application.port.security.PasswordEncoderPort;
+import com.danieldiego.trackMaintenance.application.Interface.security.PasswordEncoderPort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 

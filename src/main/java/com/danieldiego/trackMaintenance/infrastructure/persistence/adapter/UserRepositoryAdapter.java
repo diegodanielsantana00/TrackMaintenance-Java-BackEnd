@@ -1,7 +1,7 @@
 package com.danieldiego.trackMaintenance.infrastructure.persistence.adapter;
 
 import com.danieldiego.trackMaintenance.domain.model.User;
-import com.danieldiego.trackMaintenance.application.port.user.UserRepositoryPort;
+import com.danieldiego.trackMaintenance.application.Interface.user.UserRepositoryPort;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.entity.UserJpaEntity;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.repository.UserJpaRepository;
 import org.springframework.stereotype.Component;

@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 @Schema(description = "Login request payload")
 public record LoginRequest(
 
-        @Schema(description = "User's email address", example = "john@example.com")
+        @Schema(description = "User's email address", example = "contato@danieldiegosantana.me")
         @NotBlank(message = "Email is required")
         @Email(message = "Invalid email format")
         String email,
