@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 @Schema(description = "Registration request payload")
 public record RegisterRequest(
 
-        @Schema(description = "User's full name", example = "John Doe")
+        @Schema(description = "User's full name", example = "Diego Santana")
         @NotBlank(message = "Name is required")
         @Size(min = 3, max = 150, message = "Name must be between 3 and 150 characters")
         String name,

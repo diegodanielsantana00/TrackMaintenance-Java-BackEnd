@@ -1,0 +1,27 @@
+package com.danieldiego.trackMaintenance.application.service.manutencao;
+
+import com.danieldiego.trackMaintenance.application.dto.manutencao.CreateManutencaoCommand;
+import com.danieldiego.trackMaintenance.application.dto.manutencao.ManutencaoOutput;
+import com.danieldiego.trackMaintenance.application.dto.manutencao.UpdateManutencaoCommand;
+import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+
+import java.util.List;
+
+public interface ManutencaoService {
+
+    ManutencaoOutput createManutencao(CreateManutencaoCommand command);
+
+    ManutencaoOutput getManutencaoById(Long id);
+
+    List<ManutencaoOutput> getAllManutencoes();
+
+    List<ManutencaoOutput> getManutencoesByVeiculo(Long veiculoId);
+
+    List<ManutencaoOutput> getManutencoesByStatus(StatusManutencao status);
+
+    ManutencaoOutput updateManutencao(Long id, UpdateManutencaoCommand command);
+
+    ManutencaoOutput updateStatus(Long id, StatusManutencao status);
+
+    void deleteManutencao(Long id);
+}

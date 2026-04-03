@@ -3,8 +3,11 @@ package com.danieldiego.trackMaintenance.adapter.handler;
 import com.danieldiego.trackMaintenance.adapter.dto.ApiResponse;
 import com.danieldiego.trackMaintenance.domain.exception.BusinessException;
 import com.danieldiego.trackMaintenance.domain.exception.InvalidCredentialsException;
+import com.danieldiego.trackMaintenance.domain.exception.ManutencaoNotFoundException;
 import com.danieldiego.trackMaintenance.domain.exception.UserAlreadyExistsException;
 import com.danieldiego.trackMaintenance.domain.exception.UserNotFoundException;
+import com.danieldiego.trackMaintenance.domain.exception.VeiculoAlreadyExistsException;
+import com.danieldiego.trackMaintenance.domain.exception.VeiculoNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -27,6 +30,24 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UserNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ApiResponse<Void> handleUserNotFound(UserNotFoundException ex) {
+        return ApiResponse.error(404, ex.getMessage());
+    }
+
+    @ExceptionHandler(VeiculoNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ApiResponse<Void> handleVeiculoNotFound(VeiculoNotFoundException ex) {
+        return ApiResponse.error(404, ex.getMessage());
+    }
+
+    @ExceptionHandler(VeiculoAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ApiResponse<Void> handleVeiculoAlreadyExists(VeiculoAlreadyExistsException ex) {
+        return ApiResponse.error(409, ex.getMessage());
+    }
+
+    @ExceptionHandler(ManutencaoNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ApiResponse<Void> handleManutencaoNotFound(ManutencaoNotFoundException ex) {
         return ApiResponse.error(404, ex.getMessage());
     }
 
