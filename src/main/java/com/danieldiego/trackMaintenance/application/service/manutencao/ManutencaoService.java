@@ -5,6 +5,9 @@ import com.danieldiego.trackMaintenance.application.dto.manutencao.ManutencaoOut
 import com.danieldiego.trackMaintenance.application.dto.manutencao.UpdateManutencaoCommand;
 import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import java.util.List;
 
 public interface ManutencaoService {
@@ -14,6 +17,8 @@ public interface ManutencaoService {
     ManutencaoOutput getManutencaoById(Long id);
 
     List<ManutencaoOutput> getAllManutencoes();
+
+    Page<ManutencaoOutput> getAllManutencoes(Pageable pageable);
 
     List<ManutencaoOutput> getManutencoesByVeiculo(Long veiculoId);
 

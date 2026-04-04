@@ -1,6 +1,7 @@
 package com.danieldiego.trackMaintenance.adapter.controller;
 
 import com.danieldiego.trackMaintenance.adapter.dto.ApiResponse;
+import com.danieldiego.trackMaintenance.adapter.dto.PagedApiResponse;
 import com.danieldiego.trackMaintenance.adapter.dto.veiculo.VeiculoRequest;
 import com.danieldiego.trackMaintenance.application.dto.veiculo.CreateVeiculoCommand;
 import com.danieldiego.trackMaintenance.application.dto.veiculo.VeiculoOutput;
@@ -12,10 +13,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/v1/veiculos")
@@ -45,9 +46,12 @@ public class VeiculoController {
     }
 
     @GetMapping
-    @Operation(summary = "Listar veículos", description = "Retorna todos os veículos cadastrados")
-    public ApiResponse<List<VeiculoOutput>> findAll() {
-        return ApiResponse.success(200, "Veículos listados com sucesso", veiculoService.getAllVeiculos());
+    @Operation(summary = "Listar veículos", description = "Retorna veículos com paginação")
+    public PagedApiResponse<VeiculoOutput> findAll(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        var pageable = PageRequest.of(page, size, Sort.by("id").descending());
+        return PagedApiResponse.of(200, "Veículos listados com sucesso", veiculoService.getAllVeiculos(pageable));
     }
 
     @GetMapping("/{id}")

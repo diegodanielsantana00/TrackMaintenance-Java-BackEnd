@@ -11,6 +11,9 @@ import com.danieldiego.trackMaintenance.domain.model.Manutencao;
 import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
 import com.danieldiego.trackMaintenance.domain.model.Veiculo;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import java.util.List;
 
 public class ManutencaoServiceImpl implements ManutencaoService {
@@ -52,6 +55,11 @@ public class ManutencaoServiceImpl implements ManutencaoService {
         return manutencaoRepository.findAll().stream()
                 .map(this::toOutputWithVeiculo)
                 .toList();
+    }
+
+    @Override
+    public Page<ManutencaoOutput> getAllManutencoes(Pageable pageable) {
+        return manutencaoRepository.findAll(pageable).map(this::toOutputWithVeiculo);
     }
 
     @Override

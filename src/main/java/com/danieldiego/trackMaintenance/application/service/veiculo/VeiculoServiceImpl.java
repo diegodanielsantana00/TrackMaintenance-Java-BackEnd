@@ -9,6 +9,9 @@ import com.danieldiego.trackMaintenance.domain.model.Veiculo;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 public class VeiculoServiceImpl implements VeiculoService {
 
     private final VeiculoRepositoryPort veiculoRepository;
@@ -35,6 +38,11 @@ public class VeiculoServiceImpl implements VeiculoService {
     @Override
     public List<VeiculoOutput> getAllVeiculos() {
         return veiculoRepository.findAll().stream().map(this::toOutput).toList();
+    }
+
+    @Override
+    public Page<VeiculoOutput> getAllVeiculos(Pageable pageable) {
+        return veiculoRepository.findAll(pageable).map(this::toOutput);
     }
 
     @Override

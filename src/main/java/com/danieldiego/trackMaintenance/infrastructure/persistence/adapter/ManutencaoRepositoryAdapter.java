@@ -7,6 +7,8 @@ import com.danieldiego.trackMaintenance.infrastructure.persistence.entity.Manute
 import com.danieldiego.trackMaintenance.infrastructure.persistence.entity.VeiculoJpaEntity;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.repository.ManutencaoJpaRepository;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.repository.VeiculoJpaRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -39,6 +41,11 @@ public class ManutencaoRepositoryAdapter implements ManutencaoRepositoryPort {
     @Override
     public List<Manutencao> findAll() {
         return jpaRepository.findAll().stream().map(this::toDomain).toList();
+    }
+
+    @Override
+    public Page<Manutencao> findAll(Pageable pageable) {
+        return jpaRepository.findAll(pageable).map(this::toDomain);
     }
 
     @Override

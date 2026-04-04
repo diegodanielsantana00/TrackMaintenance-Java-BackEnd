@@ -1,6 +1,7 @@
 package com.danieldiego.trackMaintenance.adapter.controller;
 
 import com.danieldiego.trackMaintenance.adapter.dto.ApiResponse;
+import com.danieldiego.trackMaintenance.adapter.dto.PagedApiResponse;
 import com.danieldiego.trackMaintenance.adapter.dto.manutencao.CreateManutencaoRequest;
 import com.danieldiego.trackMaintenance.adapter.dto.manutencao.UpdateManutencaoRequest;
 import com.danieldiego.trackMaintenance.adapter.dto.manutencao.UpdateManutencaoStatusRequest;
@@ -16,6 +17,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,9 +56,12 @@ public class ManutencaoController {
     }
 
     @GetMapping
-    @Operation(summary = "Listar manutenções", description = "Retorna todas as manutenções cadastradas")
-    public ApiResponse<List<ManutencaoOutput>> findAll() {
-        return ApiResponse.success(200, "Manutenções listadas com sucesso", manutencaoService.getAllManutencoes());
+    @Operation(summary = "Listar manutenções", description = "Retorna manutenções com paginação")
+    public PagedApiResponse<ManutencaoOutput> findAll(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        var pageable = PageRequest.of(page, size, Sort.by("id").descending());
+        return PagedApiResponse.of(200, "Manutenções listadas com sucesso", manutencaoService.getAllManutencoes(pageable));
     }
 
     @GetMapping("/{id}")

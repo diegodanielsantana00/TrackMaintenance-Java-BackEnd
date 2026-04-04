@@ -6,6 +6,9 @@ import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 public interface ManutencaoRepositoryPort {
 
     Manutencao save(Manutencao manutencao);
@@ -13,6 +16,8 @@ public interface ManutencaoRepositoryPort {
     Optional<Manutencao> findById(Long id);
 
     List<Manutencao> findAll();
+
+    Page<Manutencao> findAll(Pageable pageable);
 
     List<Manutencao> findByVeiculoId(Long veiculoId);
 
