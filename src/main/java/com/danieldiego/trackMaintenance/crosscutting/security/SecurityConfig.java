@@ -1,6 +1,5 @@
-package com.danieldiego.trackMaintenance.infrastructure.config;
+package com.danieldiego.trackMaintenance.crosscutting.security;
 
-import com.danieldiego.trackMaintenance.infrastructure.security.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

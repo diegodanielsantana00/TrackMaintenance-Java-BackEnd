@@ -1,6 +1,6 @@
 package com.danieldiego.trackMaintenance.infrastructure.jwt;
 
-import com.danieldiego.trackMaintenance.infrastructure.config.JwtProperties;
+import com.danieldiego.trackMaintenance.crosscutting.config.JwtProperties;
 import com.danieldiego.trackMaintenance.application.Interface.jwt.JwtTokenPort;
 import com.danieldiego.trackMaintenance.domain.model.User;
 import io.jsonwebtoken.Claims;

@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.infrastructure.config;
+package com.danieldiego.trackMaintenance.crosscutting.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

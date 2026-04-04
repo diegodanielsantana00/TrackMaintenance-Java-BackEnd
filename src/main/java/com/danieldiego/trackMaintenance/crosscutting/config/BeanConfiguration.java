@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.infrastructure.config;
+package com.danieldiego.trackMaintenance.crosscutting.config;
 
 import com.danieldiego.trackMaintenance.application.Interface.jwt.JwtTokenPort;
 import com.danieldiego.trackMaintenance.application.Interface.manutencao.ManutencaoRepositoryPort;

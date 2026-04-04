@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.adapter.handler;
+package com.danieldiego.trackMaintenance.crosscutting.exception;
 
 import com.danieldiego.trackMaintenance.adapter.dto.ApiResponse;
 import com.danieldiego.trackMaintenance.domain.exception.BusinessException;

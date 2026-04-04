@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.infrastructure.config;
+package com.danieldiego.trackMaintenance.crosscutting.openapi;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

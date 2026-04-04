@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.infrastructure.security;
+package com.danieldiego.trackMaintenance.crosscutting.security;
 
 import com.danieldiego.trackMaintenance.application.Interface.security.PasswordEncoderPort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.infrastructure.security;
+package com.danieldiego.trackMaintenance.crosscutting.security;
 
 import com.danieldiego.trackMaintenance.application.Interface.jwt.JwtTokenPort;
 import jakarta.servlet.FilterChain;
