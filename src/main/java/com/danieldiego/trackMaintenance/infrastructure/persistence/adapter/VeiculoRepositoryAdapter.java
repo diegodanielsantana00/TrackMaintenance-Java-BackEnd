@@ -1,7 +1,6 @@
 package com.danieldiego.trackMaintenance.infrastructure.persistence.adapter;
 
 import com.danieldiego.trackMaintenance.application.Interface.veiculo.VeiculoRepositoryPort;
-import com.danieldiego.trackMaintenance.domain.model.TipoVeiculo;
 import com.danieldiego.trackMaintenance.domain.model.Veiculo;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.entity.VeiculoJpaEntity;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.repository.VeiculoJpaRepository;
