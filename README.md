@@ -82,6 +82,6 @@ docker compose up -d
 |---------------|--------|------------------------------------|
 | API Backend   | `8080` | Spring Boot (perfil Docker)        |
 | PostgreSQL    | `5433` | Banco de dados (mapeado do 5432)   |
-| RabbitMQ      | `5672` | Mensageria                         |
-| RabbitMQ UI   | `15672`| Painel de gerenciamento do RabbitMQ|
+<!-- | RabbitMQ      | `5672` | Mensageria                         |
+| RabbitMQ UI   | `15672`| Painel de gerenciamento do RabbitMQ| -->
 | Debug (JVM)   | `5005` | Remote debug via JDWP              |
