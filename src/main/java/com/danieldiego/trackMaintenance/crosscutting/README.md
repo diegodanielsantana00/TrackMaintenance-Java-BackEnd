@@ -1,7 +1,7 @@
 # Crosscutting Layer
 
 
-A camada **Crosscutting** reúne as preocupações transversais da aplicação — tudo aquilo que **atravessa** as demais camadas sem pertencer a nenhuma delas. Aqui ficam as configurações do Spring, segurança (JWT + Spring Security), tratamento global de exceções e documentação OpenAPI/Swagger.
+A camada **Crosscutting** reúne as preocupações transversais da aplicação   tudo aquilo que **atravessa** as demais camadas sem pertencer a nenhuma delas. Aqui ficam as configurações do Spring, segurança (JWT + Spring Security), tratamento global de exceções e documentação OpenAPI/Swagger.
 
 É nesta camada que ocorre a **"costura"** entre as camadas: os beans da Application são registrados, as portas são ligadas aos adapters de infraestrutura, e as regras de segurança são configuradas.
 
@@ -33,8 +33,8 @@ public DashboardService dashboardService(DashboardRepositoryPort repo) { ... }
 
 Configuração central que importa todas as outras configs e define:
 
-- **SystemInitializer** (`CommandLineRunner`) — loga os perfis ativos ao iniciar (exceto perfil `test`)
-- **SystemConfigValidator** — valida na inicialização que `jwt.secret` e `spring.datasource.url` estão configurados
+- **SystemInitializer** (`CommandLineRunner`)   loga os perfis ativos ao iniciar (exceto perfil `test`)
+- **SystemConfigValidator**   valida na inicialização que `jwt.secret` e `spring.datasource.url` estão configurados
 
 ---
 
@@ -64,7 +64,7 @@ Record que mapeia as propriedades JWT do `application.properties`:
 
 ---
 
-## Exception — Tratamento Global
+## Exception   Tratamento Global
 
 ## OpenAPI / Swagger
 
@@ -96,7 +96,7 @@ Configura o Spring Security com as seguintes regras:
 |--------------|-------|
 | **CORS** | Permite todas as origens, métodos e headers (com credentials) |
 | **CSRF** | Desabilitado (API stateless) |
-| **Sessão** | `STATELESS` — sem sessão no servidor |
+| **Sessão** | `STATELESS`   sem sessão no servidor |
 | **Filtro JWT** | Adicionado antes do `UsernamePasswordAuthenticationFilter` |
 
 **Rotas públicas (sem autenticação):**
@@ -136,7 +136,7 @@ Configura o Spring Security com as seguintes regras:
 
 | Padrão | Onde |
 |--------|------|
-| **Manual Bean Registration** | `BeanConfiguration` — Services registrados sem `@Service` |
+| **Manual Bean Registration** | `BeanConfiguration`   Services registrados sem `@Service` |
 | **Adapter Pattern** | `PasswordEncoderAdapter` implementa `PasswordEncoderPort` |
 | **Filter Chain** | `JwtAuthenticationFilter` como `OncePerRequestFilter` |
 | **Global Exception Handling** | `@RestControllerAdvice` centraliza tratamento de erros |

@@ -1,7 +1,7 @@
 # Application Layer
 
 
-A camada **Application** contém os **casos de uso** da aplicação — a orquestração da lógica de negócio. Ela define as **Portas (Ports)** que representam os contratos de entrada e saída na Arquitetura Hexagonal, e os **Services** que implementam os use cases consumindo essas portas.
+A camada **Application** contém os **casos de uso** da aplicação   a orquestração da lógica de negócio. Ela define as **Portas (Ports)** que representam os contratos de entrada e saída na Arquitetura Hexagonal, e os **Services** que implementam os use cases consumindo essas portas.
  A única dependência externa é `org.springframework.data.domain` para paginação.
 
 ## Diagrama de Dependências
@@ -23,7 +23,7 @@ A camada **Application** contém os **casos de uso** da aplicação — a orques
                          └─────────────────┘
 ```
 
-A camada Application **define** as Ports e as **consome**. A camada Infrastructure **implementa** as Ports. Isso inverte a dependência — o core nunca depende da infraestrutura.
+A camada Application **define** as Ports e as **consome**. A camada Infrastructure **implementa** as Ports. Isso inverte a dependência   o core nunca depende da infraestrutura.
 
 ---
 

@@ -92,13 +92,13 @@ Para erros:
 
 ## Controllers
 
-### AuthController — `/v1/auth`
+### AuthController   `/v1/auth`
 
 Endpoints públicos (não requerem JWT).
 
 ---
 
-#### `POST /v1/auth/register` — Registrar Usuário
+#### `POST /v1/auth/register`   Registrar Usuário
 
 **Request Body:**
 ```json
@@ -150,7 +150,7 @@ curl -X POST http://localhost:3440/v1/auth/register \
 
 ---
 
-#### `POST /v1/auth/login` — Autenticar Usuário
+#### `POST /v1/auth/login`   Autenticar Usuário
 
 **Request Body:**
 ```json
@@ -199,13 +199,13 @@ curl -X POST http://localhost:3440/v1/auth/login \
 
 ---
 
-### UserController — `/v1/users`
+### UserController   `/v1/users`
 
 Requer autenticação JWT via header `Authorization: Bearer <TOKEN>`.
 
 ---
 
-#### `GET /v1/users/me` — Obter Perfil
+#### `GET /v1/users/me`   Obter Perfil
 
 **Response `200 OK`:**
 ```json
@@ -236,13 +236,13 @@ curl -X GET http://localhost:3440/v1/users/me \
 
 ---
 
-### VeiculoController — `/v1/veiculos`
+### VeiculoController   `/v1/veiculos`
 
 Todos os endpoints requerem autenticação JWT.
 
 ---
 
-#### `POST /v1/veiculos` — Criar Veículo
+#### `POST /v1/veiculos`   Criar Veículo
 
 **Request Body:**
 ```json
@@ -299,7 +299,7 @@ curl -X POST http://localhost:3440/v1/veiculos \
 
 ---
 
-#### `GET /v1/veiculos` — Listar Veículos (Paginado)
+#### `GET /v1/veiculos`   Listar Veículos (Paginado)
 
 **Query Parameters:**
 | Param | Default | Descrição |
@@ -337,7 +337,7 @@ curl -X GET "http://localhost:3440/v1/veiculos?page=0&size=10" \
 
 ---
 
-#### `GET /v1/veiculos/{id}` — Buscar por ID
+#### `GET /v1/veiculos/{id}`   Buscar por ID
 
 **Response `200 OK`:**
 ```json
@@ -365,7 +365,7 @@ curl -X GET http://localhost:3440/v1/veiculos/1 \
 
 ---
 
-#### `PUT /v1/veiculos/{id}` — Atualizar Veículo
+#### `PUT /v1/veiculos/{id}`   Atualizar Veículo
 
 **Request Body:** (mesma estrutura do `POST`)
 ```json
@@ -398,7 +398,7 @@ curl -X PUT http://localhost:3440/v1/veiculos/1 \
 
 ---
 
-#### `DELETE /v1/veiculos/{id}` — Remover Veículo
+#### `DELETE /v1/veiculos/{id}`   Remover Veículo
 
 **Response:** `204 No Content`
 
@@ -412,13 +412,13 @@ curl -X DELETE http://localhost:3440/v1/veiculos/1 \
 
 ---
 
-### ManutencaoController — `/v1/manutencoes`
+### ManutencaoController   `/v1/manutencoes`
 
 Todos os endpoints requerem autenticação JWT.
 
 ---
 
-#### `POST /v1/manutencoes` — Agendar Manutenção
+#### `POST /v1/manutencoes`   Agendar Manutenção
 
 **Request Body:**
 ```json
@@ -482,7 +482,7 @@ curl -X POST http://localhost:3440/v1/manutencoes \
 
 ---
 
-#### `GET /v1/manutencoes` — Listar Manutenções (Paginado)
+#### `GET /v1/manutencoes`   Listar Manutenções (Paginado)
 
 **Query Parameters:**
 | Param | Default | Descrição |
@@ -524,7 +524,7 @@ curl -X GET "http://localhost:3440/v1/manutencoes?page=0&size=10" \
 
 ---
 
-#### `GET /v1/manutencoes/{id}` — Buscar por ID
+#### `GET /v1/manutencoes/{id}`   Buscar por ID
 
 **Response `200 OK`:**
 ```json
@@ -556,7 +556,7 @@ curl -X GET http://localhost:3440/v1/manutencoes/1 \
 
 ---
 
-#### `GET /v1/manutencoes/veiculo/{veiculoId}` — Por Veículo
+#### `GET /v1/manutencoes/veiculo/{veiculoId}`   Por Veículo
 
 Retorna todas as manutenções de um veículo específico.
 
@@ -578,7 +578,7 @@ curl -X GET http://localhost:3440/v1/manutencoes/veiculo/1 \
 
 ---
 
-#### `GET /v1/manutencoes/status/{status}` — Por Status
+#### `GET /v1/manutencoes/status/{status}`   Por Status
 
 Filtra manutenções pelo status informado.
 
@@ -602,7 +602,7 @@ curl -X GET http://localhost:3440/v1/manutencoes/status/PENDENTE \
 
 ---
 
-#### `PUT /v1/manutencoes/{id}` — Atualizar Manutenção
+#### `PUT /v1/manutencoes/{id}`   Atualizar Manutenção
 
 Atualiza todos os campos de uma manutenção, incluindo o status.
 
@@ -650,7 +650,7 @@ curl -X PUT http://localhost:3440/v1/manutencoes/1 \
 
 ---
 
-#### `PATCH /v1/manutencoes/{id}/status` — Atualizar Status
+#### `PATCH /v1/manutencoes/{id}/status`   Atualizar Status
 
 Atualiza apenas o status da manutenção, respeitando a máquina de estados.
 
@@ -677,7 +677,7 @@ curl -X PATCH http://localhost:3440/v1/manutencoes/1/status \
 
 ---
 
-#### `DELETE /v1/manutencoes/{id}` — Remover Manutenção
+#### `DELETE /v1/manutencoes/{id}`   Remover Manutenção
 
 **Response:** `204 No Content`
 
@@ -691,13 +691,13 @@ curl -X DELETE http://localhost:3440/v1/manutencoes/1 \
 
 ---
 
-### DashboardController — `/v1/dashboard`
+### DashboardController   `/v1/dashboard`
 
 Todos os endpoints requerem autenticação JWT. Retornam indicadores e métricas da frota.
 
 ---
 
-#### `GET /v1/dashboard/total-km` — Total de KM
+#### `GET /v1/dashboard/total-km`   Total de KM
 
 Soma da quilometragem de um veículo específico ou de toda a frota.
 
@@ -726,7 +726,7 @@ curl -X GET "http://localhost:3440/v1/dashboard/total-km?veiculoId=1" \
 
 ---
 
-#### `GET /v1/dashboard/volume-por-categoria` — Volume por Categoria
+#### `GET /v1/dashboard/volume-por-categoria`   Volume por Categoria
 
 Quantidade de veículos por tipo (LEVE/PESADO) com percentuais.
 
@@ -751,7 +751,7 @@ curl -X GET http://localhost:3440/v1/dashboard/volume-por-categoria \
 
 ---
 
-#### `GET /v1/dashboard/cronograma-manutencao` — Cronograma
+#### `GET /v1/dashboard/cronograma-manutencao`   Cronograma
 
 Próximas 5 manutenções pendentes ou em realização.
 
@@ -784,7 +784,7 @@ curl -X GET http://localhost:3440/v1/dashboard/cronograma-manutencao \
 
 ---
 
-#### `GET /v1/dashboard/ranking-utilizacao` — Ranking
+#### `GET /v1/dashboard/ranking-utilizacao`   Ranking
 
 Top 5 veículos por km percorrida.
 
@@ -815,7 +815,7 @@ curl -X GET http://localhost:3440/v1/dashboard/ranking-utilizacao \
 
 ---
 
-#### `GET /v1/dashboard/projecao-financeira` — Projeção Financeira
+#### `GET /v1/dashboard/projecao-financeira`   Projeção Financeira
 
 Soma do custo total estimado em manutenções para o mês atual.
 

@@ -48,7 +48,7 @@ public enum TipoVeiculo {
 
 ## Exceções de Domínio
 
-| `BusinessException` | Classe base abstrata | — |
+| `BusinessException` | Classe base abstrata |   |
 | `InvalidCredentialsException` | Email ou senha inválidos no login | `401` |
 | `ManutencaoNotFoundException` | Manutenção não encontrada pelo ID | `404` |
 | `UserAlreadyExistsException` | Email já cadastrado no registro | `409` |
