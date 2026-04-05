@@ -10,7 +10,7 @@ O sistema está disponível em produção para visualização e testes:
 
 - **Frontend (Aplicação Web)**: [https://logitrack.danieldiegosantana.me/](https://logitrack.danieldiegosantana.me/)
 - **Documentação da API**: [https://api-logitrack.danieldiegosantana.me/swagger/index.html](https://api-logitrack.danieldiegosantana.me/swagger/index.html)
-- **URL da API**: [https://api-logitrack.danieldiegosantana.me/](https://logitrack.danieldiegosantana.me/swagger/index.html)
+- **URL da API**: [https://api-logitrack.danieldiegosantana.me/](https://api-logitrack.danieldiegosantana.me/swagger/index.html)
 
 ## Sobre o Projeto
 

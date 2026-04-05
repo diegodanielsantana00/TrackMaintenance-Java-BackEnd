@@ -62,7 +62,7 @@ Para erros:
 >
 > **Base URL Produção:** `https://api-logitrack.danieldiegosantana.me`
 >
-> **Swagger UI:** [https://logitrack.danieldiegosantana.me/swagger/index.html](https://logitrack.danieldiegosantana.me/swagger/index.html)
+> **Swagger UI:** [https://api-logitrack.danieldiegosantana.me/swagger/index.html](https://api-logitrack.danieldiegosantana.me/swagger/index.html)
 
 | Método | Endpoint | Auth | Descrição |
 |--------|----------|------|-----------|
