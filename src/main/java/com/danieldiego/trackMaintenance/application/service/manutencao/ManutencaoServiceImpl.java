@@ -8,7 +8,7 @@ import com.danieldiego.trackMaintenance.application.dto.manutencao.UpdateManuten
 import com.danieldiego.trackMaintenance.domain.exception.ManutencaoNotFoundException;
 import com.danieldiego.trackMaintenance.domain.exception.VeiculoNotFoundException;
 import com.danieldiego.trackMaintenance.domain.model.Manutencao;
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 import com.danieldiego.trackMaintenance.domain.model.Veiculo;
 
 import org.springframework.data.domain.Page;

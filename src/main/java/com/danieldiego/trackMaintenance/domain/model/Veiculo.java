@@ -1,5 +1,7 @@
 package com.danieldiego.trackMaintenance.domain.model;
 
+import com.danieldiego.trackMaintenance.domain.enums.TipoVeiculo;
+
 public class Veiculo {
 
     private static final String PLACA_REGEX = "^[A-Z]{3}-?\\d{4}$|^[A-Z]{3}\\d[A-Z]\\d{2}$";

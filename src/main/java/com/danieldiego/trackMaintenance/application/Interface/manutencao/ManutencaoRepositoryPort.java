@@ -1,7 +1,7 @@
 package com.danieldiego.trackMaintenance.application.Interface.manutencao;
 
 import com.danieldiego.trackMaintenance.domain.model.Manutencao;
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 
 import java.util.List;
 import java.util.Optional;

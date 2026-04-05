@@ -1,6 +1,6 @@
 package com.danieldiego.trackMaintenance.infrastructure.persistence.entity;
 
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 import jakarta.persistence.*;
 import lombok.*;
 

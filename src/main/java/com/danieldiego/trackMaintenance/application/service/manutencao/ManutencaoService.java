@@ -3,7 +3,7 @@ package com.danieldiego.trackMaintenance.application.service.manutencao;
 import com.danieldiego.trackMaintenance.application.dto.manutencao.CreateManutencaoCommand;
 import com.danieldiego.trackMaintenance.application.dto.manutencao.ManutencaoOutput;
 import com.danieldiego.trackMaintenance.application.dto.manutencao.UpdateManutencaoCommand;
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

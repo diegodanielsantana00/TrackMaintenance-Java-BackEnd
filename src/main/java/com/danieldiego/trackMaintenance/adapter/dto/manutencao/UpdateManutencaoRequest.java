@@ -1,6 +1,6 @@
 package com.danieldiego.trackMaintenance.adapter.dto.manutencao;
 
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;

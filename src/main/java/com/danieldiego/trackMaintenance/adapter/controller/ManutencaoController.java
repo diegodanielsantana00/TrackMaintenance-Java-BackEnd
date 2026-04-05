@@ -9,7 +9,7 @@ import com.danieldiego.trackMaintenance.application.dto.manutencao.CreateManuten
 import com.danieldiego.trackMaintenance.application.dto.manutencao.ManutencaoOutput;
 import com.danieldiego.trackMaintenance.application.dto.manutencao.UpdateManutencaoCommand;
 import com.danieldiego.trackMaintenance.application.service.manutencao.ManutencaoService;
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

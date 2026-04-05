@@ -2,7 +2,7 @@ package com.danieldiego.trackMaintenance.infrastructure.persistence.adapter;
 
 import com.danieldiego.trackMaintenance.application.Interface.manutencao.ManutencaoRepositoryPort;
 import com.danieldiego.trackMaintenance.domain.model.Manutencao;
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.entity.ManutencaoJpaEntity;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.entity.VeiculoJpaEntity;
 import com.danieldiego.trackMaintenance.infrastructure.persistence.repository.ManutencaoJpaRepository;

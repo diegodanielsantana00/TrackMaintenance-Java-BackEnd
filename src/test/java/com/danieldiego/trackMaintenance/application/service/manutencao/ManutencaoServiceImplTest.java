@@ -6,8 +6,8 @@ import com.danieldiego.trackMaintenance.application.dto.manutencao.CreateManuten
 import com.danieldiego.trackMaintenance.application.dto.manutencao.ManutencaoOutput;
 import com.danieldiego.trackMaintenance.application.dto.manutencao.UpdateManutencaoCommand;
 import com.danieldiego.trackMaintenance.domain.model.Manutencao;
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
-import com.danieldiego.trackMaintenance.domain.model.TipoVeiculo;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.TipoVeiculo;
 import com.danieldiego.trackMaintenance.domain.model.Veiculo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

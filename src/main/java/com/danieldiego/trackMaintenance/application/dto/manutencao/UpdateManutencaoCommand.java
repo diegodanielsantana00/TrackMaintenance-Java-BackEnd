@@ -1,6 +1,6 @@
 package com.danieldiego.trackMaintenance.application.dto.manutencao;
 
-import com.danieldiego.trackMaintenance.domain.model.StatusManutencao;
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

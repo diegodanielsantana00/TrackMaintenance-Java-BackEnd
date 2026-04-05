@@ -1,6 +1,6 @@
 package com.danieldiego.trackMaintenance.adapter.dto.veiculo;
 
-import com.danieldiego.trackMaintenance.domain.model.TipoVeiculo;
+import com.danieldiego.trackMaintenance.domain.enums.TipoVeiculo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

@@ -1,4 +1,4 @@
-package com.danieldiego.trackMaintenance.domain.model;
+package com.danieldiego.trackMaintenance.domain.enums;
 
 public enum StatusManutencao {
     PENDENTE,

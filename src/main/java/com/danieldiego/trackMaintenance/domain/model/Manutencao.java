@@ -1,5 +1,7 @@
 package com.danieldiego.trackMaintenance.domain.model;
 
+import com.danieldiego.trackMaintenance.domain.enums.StatusManutencao;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
