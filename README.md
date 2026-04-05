@@ -27,6 +27,7 @@ O projeto segue os princípios da **Clean Architecture** combinados com a **Arqu
 | [Adapter (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/adapter/README.md) | Controllers REST e DTOs de request/response |
 | [Infrastructure (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/infrastructure/README.md) | Persistência JPA, adaptadores de repositório e JWT |
 | [Crosscutting (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/crosscutting/README.md) | Configurações, segurança, tratamento de exceções e OpenAPI |
+| [Tests (Clique aqui)](src/test/java/com/danieldiego/trackMaintenance/README.md) | Testes unitários e de integração |
 
 ## Como Rodar o Projeto
 
