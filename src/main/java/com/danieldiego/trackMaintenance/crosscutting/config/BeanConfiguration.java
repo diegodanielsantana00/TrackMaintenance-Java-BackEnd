@@ -1,10 +1,13 @@
 package com.danieldiego.trackMaintenance.crosscutting.config;
 
+import com.danieldiego.trackMaintenance.application.Interface.dashboard.DashboardRepositoryPort;
 import com.danieldiego.trackMaintenance.application.Interface.jwt.JwtTokenPort;
 import com.danieldiego.trackMaintenance.application.Interface.manutencao.ManutencaoRepositoryPort;
 import com.danieldiego.trackMaintenance.application.Interface.security.PasswordEncoderPort;
 import com.danieldiego.trackMaintenance.application.Interface.user.UserRepositoryPort;
 import com.danieldiego.trackMaintenance.application.Interface.veiculo.VeiculoRepositoryPort;
+import com.danieldiego.trackMaintenance.application.service.dashboard.DashboardService;
+import com.danieldiego.trackMaintenance.application.service.dashboard.DashboardServiceImpl;
 import com.danieldiego.trackMaintenance.application.service.manutencao.ManutencaoService;
 import com.danieldiego.trackMaintenance.application.service.manutencao.ManutencaoServiceImpl;
 import com.danieldiego.trackMaintenance.application.service.user.UserService;
@@ -35,5 +38,10 @@ public class BeanConfiguration {
     public ManutencaoService manutencaoService(ManutencaoRepositoryPort manutencaoRepository,
                                                VeiculoRepositoryPort veiculoRepository) {
         return new ManutencaoServiceImpl(manutencaoRepository, veiculoRepository);
+    }
+
+    @Bean
+    public DashboardService dashboardService(DashboardRepositoryPort dashboardRepository) {
+        return new DashboardServiceImpl(dashboardRepository);
     }
 }
