@@ -78,4 +78,16 @@ public class GlobalExceptionHandler {
     public ApiResponse<Void> handleDataIntegrity(DataIntegrityViolationException ex) {
         return ApiResponse.error(409, "A resource with the given data already exists");
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiResponse<Void> handleIllegalArgument(IllegalArgumentException ex) {
+        return ApiResponse.error(400, ex.getMessage());
+    }
+
+    @ExceptionHandler(IllegalStateException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ApiResponse<Void> handleIllegalState(IllegalStateException ex) {
+        return ApiResponse.error(409, ex.getMessage());
+    }
 }

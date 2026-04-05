@@ -11,4 +11,6 @@ public interface ManutencaoJpaRepository extends JpaRepository<ManutencaoJpaEnti
     List<ManutencaoJpaEntity> findByVeiculoId(Long veiculoId);
 
     List<ManutencaoJpaEntity> findByStatus(StatusManutencao status);
+
+    boolean existsByVeiculoIdAndStatusIn(Long veiculoId, List<StatusManutencao> statuses);
 }

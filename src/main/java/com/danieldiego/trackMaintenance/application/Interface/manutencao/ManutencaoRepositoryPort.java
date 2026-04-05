@@ -23,5 +23,7 @@ public interface ManutencaoRepositoryPort {
 
     List<Manutencao> findByStatus(StatusManutencao status);
 
+    boolean existsActiveByVeiculoId(Long veiculoId);
+
     void deleteById(Long id);
 }

@@ -32,6 +32,11 @@ public class ManutencaoServiceImpl implements ManutencaoService {
         Veiculo veiculo = veiculoRepository.findById(command.veiculoId())
                 .orElseThrow(() -> new VeiculoNotFoundException(command.veiculoId()));
 
+        if (manutencaoRepository.existsActiveByVeiculoId(veiculo.getId())) {
+            throw new IllegalStateException(
+                    "Veículo já possui uma manutenção ativa (PENDENTE ou EM_REALIZACAO). Finalize-a antes de criar outra.");
+        }
+
         Manutencao manutencao = Manutencao.create(
                 veiculo.getId(),
                 command.dataInicio(),
@@ -83,9 +88,7 @@ public class ManutencaoServiceImpl implements ManutencaoService {
         Manutencao existing = manutencaoRepository.findById(id)
                 .orElseThrow(() -> new ManutencaoNotFoundException(id));
 
-        Manutencao updated = Manutencao.reconstitute(
-                id,
-                existing.getVeiculoId(),
+        existing.atualizar(
                 command.dataInicio(),
                 command.dataFinalizacao(),
                 command.tipoServico(),
@@ -93,7 +96,7 @@ public class ManutencaoServiceImpl implements ManutencaoService {
                 command.status()
         );
 
-        return toOutputWithVeiculo(manutencaoRepository.save(updated));
+        return toOutputWithVeiculo(manutencaoRepository.save(existing));
     }
 
     @Override
@@ -101,17 +104,9 @@ public class ManutencaoServiceImpl implements ManutencaoService {
         Manutencao existing = manutencaoRepository.findById(id)
                 .orElseThrow(() -> new ManutencaoNotFoundException(id));
 
-        Manutencao updated = Manutencao.reconstitute(
-                id,
-                existing.getVeiculoId(),
-                existing.getDataInicio(),
-                existing.getDataFinalizacao(),
-                existing.getTipoServico(),
-                existing.getCustoEstimado(),
-                status
-        );
+        existing.atualizarStatus(status);
 
-        return toOutputWithVeiculo(manutencaoRepository.save(updated));
+        return toOutputWithVeiculo(manutencaoRepository.save(existing));
     }
 
     @Override

@@ -59,6 +59,12 @@ public class ManutencaoRepositoryAdapter implements ManutencaoRepositoryPort {
     }
 
     @Override
+    public boolean existsActiveByVeiculoId(Long veiculoId) {
+        return jpaRepository.existsByVeiculoIdAndStatusIn(
+                veiculoId, List.of(StatusManutencao.PENDENTE, StatusManutencao.EM_REALIZACAO));
+    }
+
+    @Override
     public void deleteById(Long id) {
         jpaRepository.deleteById(id);
     }
