@@ -22,11 +22,11 @@ O projeto segue os princípios da **Clean Architecture** combinados com a **Arqu
 
 | Camada | Descrição |
 |--------|-----------|
-| [Domain](src/main/java/com/danieldiego/trackMaintenance/domain/README.md) | Entidades de domínio e exceções de negócio |
-| [Application](src/main/java/com/danieldiego/trackMaintenance/application/README.md) | Casos de uso, portas (interfaces) e DTOs de aplicação |
-| [Adapter](src/main/java/com/danieldiego/trackMaintenance/adapter/README.md) | Controllers REST e DTOs de request/response |
-| [Infrastructure](src/main/java/com/danieldiego/trackMaintenance/infrastructure/README.md) | Persistência JPA, adaptadores de repositório e JWT |
-| [Crosscutting](src/main/java/com/danieldiego/trackMaintenance/crosscutting/README.md) | Configurações, segurança, tratamento de exceções e OpenAPI |
+| [Domain (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/domain/README.md) | Entidades de domínio e exceções de negócio |
+| [Application (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/application/README.md) | Casos de uso, portas (interfaces) e DTOs de aplicação |
+| [Adapter (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/adapter/README.md) | Controllers REST e DTOs de request/response |
+| [Infrastructure (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/infrastructure/README.md) | Persistência JPA, adaptadores de repositório e JWT |
+| [Crosscutting (Clique aqui)](src/main/java/com/danieldiego/trackMaintenance/crosscutting/README.md) | Configurações, segurança, tratamento de exceções e OpenAPI |
 
 ## Como Rodar o Projeto
 
