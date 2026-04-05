@@ -1,7 +1,5 @@
 # Domain Layer
 
-[⬅ Voltar para o README principal](../../../../../../../../../README.md)
-
 A camada **Domain** é o "esqueleto" da aplicação. Ela contém as **entidades de negócio**, **enums** e **exceções de domínio**, Isso garante que as regras de negócio sejam puras e testáveis de forma isolada.
 
 ---
